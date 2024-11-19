@@ -1,0 +1,53 @@
+package com.tiffinebooking.ordermodule.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tiffinebooking.ordermodule.dto.NewOrderDto;
+import com.tiffinebooking.ordermodule.entity.Orders;
+import com.tiffinebooking.ordermodule.service.OrderService;
+
+@RestController
+@RequestMapping("/api/order")
+public class OrderController {
+	
+	@Autowired
+	private OrderService service;
+	
+	@PostMapping("/neworder")
+	private ResponseEntity<Orders> placeNewOrder(@RequestBody NewOrderDto dto){
+		Orders ordertoken = service.placeNewOrder(dto);
+		return ResponseEntity.status(HttpStatus.OK).body(ordertoken);
+	}
+	@GetMapping("/getorder/{oId}")
+	private ResponseEntity<Orders> getOrderById(@PathVariable("oId") long oId){
+		Orders order = service.getOrderById(oId);
+		return ResponseEntity.status(HttpStatus.OK).body(order);
+	}
+	
+	@GetMapping("/getuserorder/{uId}")
+	private ResponseEntity<Orders> getUserOrders(@PathVariable("uId")long uId){
+		Orders order = service.getUserOrders(uId);
+		return ResponseEntity.status(HttpStatus.OK).body(order);
+	}
+	
+	@PutMapping("/updateorder")
+	private ResponseEntity<?> updateOrder(){
+		return null;
+	}
+	
+	@DeleteMapping("/deleteorder/{oId}")
+	private ResponseEntity<?> deleteOrder(@PathVariable("oId") long oId){
+		String rtn = service.deleteOrder(oId);
+		return ResponseEntity.status(HttpStatus.OK).body(rtn);
+	}
+}

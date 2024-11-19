@@ -1,0 +1,5 @@
+package com.tiffinebooking.ordermodule.entity;
+
+public class Orders {
+
+}

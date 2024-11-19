@@ -1,0 +1,25 @@
+eureka:
+  instance:
+    hostname: localhost
+server:
+  port: 9000
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: user-module
+        uri: lb://user-module
+        predicates:
+        - Path=/api/user/**
+        
+      - id: tiffin-module
+        uri: lb://tiffin-module
+        predicates:
+        - Path=/api/tiffin/**
+        
+      - id: order-module
+        uri: lb://order-module
+        predicates:
+        - Path=/api/order/**

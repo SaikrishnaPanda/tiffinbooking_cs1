@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SwaggerConfiguration.java&apos; to &apos;tiffin_module/src/main/java/com.tiffinebooking.tiffinmodule.config&apos;&#x0D;&#x0A;- Original project: &apos;user_module&apos;&#x0D;&#x0A;- Destination element: &apos;tiffin_module/src/main/java/com.tiffinebooking.tiffinmodule.config&apos;&#x0D;&#x0A;- Original element: &apos;com.tiffinebooking.usermodule.config.SwaggerConfiguration.java&apos;" description="Copy compilation unit" destination="=tiffin_module/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tiffinebooking.tiffinmodule.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tiffinebooking.usermodule.config{SwaggerConfiguration.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1692215242340" units="1" version="1.0"/>
+</session>

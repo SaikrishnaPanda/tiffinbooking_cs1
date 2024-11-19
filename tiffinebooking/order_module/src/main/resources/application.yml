@@ -1,0 +1,19 @@
+
+eureka:
+  instance:
+    hostname: localhost
+server:
+  port: '9003'
+spring:
+  application:
+    name: order-module
+  datasource:
+    password: admin
+    url: jdbc:postgresql://localhost:5432/tiffinbookingdb?createDatabaseIfNotExist=true
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
